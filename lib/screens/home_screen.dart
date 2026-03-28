@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/game_card.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -146,7 +147,7 @@ class HomeScreen extends StatelessWidget {
               Row(
                 children: [
                   Expanded(
-                    child: _GameCard(
+                    child: GameCard(
                       title: 'Elden Ring',
                       hours: '125 h',
                       imageUrl: null,
@@ -154,7 +155,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                   const SizedBox(width: 12),
                   Expanded(
-                    child: _GameCard(
+                    child: GameCard(
                       title: 'Cyberpunk 2077',
                       hours: '85 h',
                       imageUrl: null,
@@ -181,7 +182,7 @@ class HomeScreen extends StatelessWidget {
                         '"We do not stop playing because we grow old, we grow old because we stop playing."',
                         style: TextStyle(
                           fontStyle: FontStyle.italic,
-                          fontSize: 16,
+                          fontSize: 14,
                           color: Colors.white70,
                           fontWeight: FontWeight.w600,
                         ),
@@ -270,71 +271,6 @@ class _StatCard extends StatelessWidget {
                   ),
                 ),
             ],
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class _GameCard extends StatelessWidget {
-  final String title;
-  final String hours;
-  final String? imageUrl;
-
-  const _GameCard({
-    required this.title,
-    required this.hours,
-    this.imageUrl,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: const Color(0xFF1E1E1E),
-        borderRadius: BorderRadius.circular(20),
-        border: Border.all(
-          color: Colors.white.withOpacity(0.1),
-        ),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            height: 180,
-            decoration: const BoxDecoration(
-              color: Color(0xFF2A2A2A),
-              borderRadius: BorderRadius.vertical(
-                top: Radius.circular(20),
-              ),
-            ),
-            child: const Center(
-              child: Icon(Icons.videogame_asset, size: 64, color: Colors.white54),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(12),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    fontSize: 16,
-                  ),
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                ),
-                const SizedBox(height: 4),
-                Text(
-                  hours,
-                  style: const TextStyle(fontSize: 12, color: Colors.white70, fontWeight: FontWeight.w500),
-                ),
-              ],
-            ),
           ),
         ],
       ),

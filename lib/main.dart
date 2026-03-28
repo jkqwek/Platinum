@@ -50,6 +50,10 @@ class _MainNavigationState extends State<MainNavigation> {
           });
         },
         type: BottomNavigationBarType.fixed,
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        selectedItemColor: const Color(0xFF64B5F6),
+        unselectedItemColor: Colors.white54,
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
